@@ -22,19 +22,30 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal">
+    <Menu
+      onClick={onClick}
+      selectedKeys={[current]}
+      mode="horizontal"
+      style={{ padding: 10 }}
+    >
       <Flex justify="space-between" align="center" style={{ width: "100%" }}>
         <div>
           <Typography.Title level={4}>Product Listing</Typography.Title>
         </div>
-        <div>
+        <Flex align="center">
           <Menu.Item>
             <Flex>
               <Switch
                 checked={isDark}
-                onChange={setDark}
+                onChange={() => {
+                  setDark();
+                  localStorage.setItem("isDark", !isDark);
+                }}
                 checkedChildren={<BsFillMoonStarsFill />}
                 unCheckedChildren={<BsFillSunFill />}
+                style={{
+                  paddingTop: 2,
+                }}
               />
             </Flex>
           </Menu.Item>
@@ -51,7 +62,7 @@ const Navbar: React.FC = () => {
               </Space>
             </Typography>
           </Menu.Item>
-        </div>
+        </Flex>
       </Flex>
     </Menu>
   );

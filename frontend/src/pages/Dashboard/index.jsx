@@ -1,11 +1,26 @@
 import React from "react";
 import PieChart from "./components/PieChart";
+import { Card, Col, Flex, Row } from "antd";
+import Table from "./components/Table";
 
 const Dashboard = () => {
   return (
-    <div>
-      <PieChart />
-    </div>
+    <Row
+      justify="space-between"
+      align="center"
+      style={{ gap: 4, marginTop: 10 }}
+    >
+      <Col span={9}>
+        <Card title="Pie Chart">
+          <PieChart />
+        </Card>
+      </Col>
+      <Col span={14}>
+        <Card title="Product Items">
+          <Table />
+        </Card>
+      </Col>
+    </Row>
   );
 };
 
