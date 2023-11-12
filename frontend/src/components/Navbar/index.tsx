@@ -1,7 +1,8 @@
 import { MailOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Avatar, Flex, Menu, Space, Typography } from "antd";
+import { Avatar, Flex, Menu, Space, Switch, Typography } from "antd";
 import React, { useState } from "react";
+import { useStore } from "../../hook/useStore";
 
 const items: MenuProps["items"] = [
   {
@@ -13,7 +14,7 @@ const items: MenuProps["items"] = [
 
 const Navbar: React.FC = () => {
   const [current, setCurrent] = useState("mail");
-
+  const { setDark, isDark } = useStore();
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
@@ -26,6 +27,14 @@ const Navbar: React.FC = () => {
           <Typography.Title level={4}>Product Listing</Typography.Title>
         </div>
         <div>
+          <Menu.Item>
+            <Switch
+              checked={isDark}
+              onChange={() => {
+                setDark();
+              }}
+            />
+          </Menu.Item>
           <Menu.Item>
             <Typography>
               <Space size="small" direction="horizontal">

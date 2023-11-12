@@ -1,14 +1,14 @@
-import { ConfigProvider, Switch, theme } from "antd";
+import { ConfigProvider, theme } from "antd";
 import { useRoutes } from "react-router-dom";
+import { useStore } from "../hook/useStore";
+import MemberLayout from "../layout/member";
+import ForgotPassword from "./Auth/ForgotPassword";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
-import ForgotPassword from "./Auth/ForgotPassword";
-import { useState } from "react";
-import MemberLayout from "../layout/member";
 import Dashboard from "./Dashboard";
 
 const Pages = () => {
-  const [isDark, setDark] = useState(false);
+  const { isDark } = useStore();
 
   const { darkAlgorithm, defaultAlgorithm } = theme;
 
@@ -45,12 +45,6 @@ const Pages = () => {
     <ConfigProvider
       theme={{ algorithm: isDark ? darkAlgorithm : defaultAlgorithm }}
     >
-      <Switch
-        checked={isDark}
-        onChange={() => {
-          setDark(!isDark);
-        }}
-      />
       {routes}
     </ConfigProvider>
   );

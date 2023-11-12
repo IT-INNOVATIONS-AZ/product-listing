@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
-
+import { Layout } from "antd";
 const MemberLayout = () => {
   return (
-    <div>
+    <Layout.Content>
       <Navbar />
       <Outlet />
-    </div>
+    </Layout.Content>
   );
 };
 
