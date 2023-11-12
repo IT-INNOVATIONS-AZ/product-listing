@@ -4,6 +4,8 @@ import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import ForgotPassword from "./Auth/ForgotPassword";
 import { useState } from "react";
+import MemberLayout from "../layout/member";
+import Dashboard from "./Dashboard";
 
 const Pages = () => {
   const [isDark, setDark] = useState(false);
@@ -24,10 +26,21 @@ const Pages = () => {
       element: <ForgotPassword />,
     },
     {
+      path: "/",
+      element: <MemberLayout />,
+      children: [
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+      ],
+    },
+    {
       path: "*",
       element: <div>404</div>,
     },
   ]);
+
   return (
     <ConfigProvider
       theme={{ algorithm: isDark ? darkAlgorithm : defaultAlgorithm }}
