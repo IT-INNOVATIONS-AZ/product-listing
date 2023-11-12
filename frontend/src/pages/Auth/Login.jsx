@@ -16,7 +16,9 @@ const Login = () => {
           <Input type="password" placeholder="Password" />
           <Flex justify="space-between" align="center">
             <Button type="primary">Login</Button>
-            <Typography.Link>Fogot Password</Typography.Link>
+            <Typography.Link href="/forgot-password">
+              Fogot Password
+            </Typography.Link>
           </Flex>
         </Space>
       </Card>

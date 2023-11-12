@@ -1,5 +1,6 @@
-import { Card, Flex, Input, Space, Button, Typography } from "antd";
+import { Button, Card, Flex, Input, Space } from "antd";
 import BgImg from "../../assets/img/bg.jpg";
+
 const boxStyle = {
   width: "100%",
   height: "100vh",
@@ -26,8 +27,7 @@ const Register = () => {
             placeholder="Confirm Password"
           />
           <Flex justify="space-between" align="center">
-            <Button type="primary">Login</Button>
-            <Typography.Link>Fogot Password</Typography.Link>
+            <Button type="primary">Register</Button>
           </Flex>
         </Space>
       </Card>
