@@ -3,6 +3,7 @@ import type { MenuProps } from "antd";
 import { Avatar, Flex, Menu, Space, Switch, Typography } from "antd";
 import React, { useState } from "react";
 import { useStore } from "../../hook/useStore";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
 const items: MenuProps["items"] = [
   {
@@ -28,12 +29,14 @@ const Navbar: React.FC = () => {
         </div>
         <div>
           <Menu.Item>
-            <Switch
-              checked={isDark}
-              onChange={() => {
-                setDark();
-              }}
-            />
+            <Flex>
+              <Switch
+                checked={isDark}
+                onChange={setDark}
+                checkedChildren={<BsFillMoonStarsFill />}
+                unCheckedChildren={<BsFillSunFill />}
+              />
+            </Flex>
           </Menu.Item>
           <Menu.Item>
             <Typography>
