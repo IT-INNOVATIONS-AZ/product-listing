@@ -8,7 +8,7 @@ const Dashboard = () => {
     <Row
       justify="space-between"
       align="center"
-      style={{ gap: 4, marginTop: 10 }}
+      style={{ marginTop: 10, padding: 10 }}
     >
       <Col span={9}>
         <Card title="Pie Chart">
