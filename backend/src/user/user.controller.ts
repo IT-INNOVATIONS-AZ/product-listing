@@ -17,6 +17,9 @@ export class UserController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
+    const isUserExist = this.userService.findOne({
+      where: { email: createUserDto.email },
+    });
     return this.userService.create(createUserDto);
   }
 

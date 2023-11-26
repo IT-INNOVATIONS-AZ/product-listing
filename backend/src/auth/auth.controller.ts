@@ -66,6 +66,7 @@ export class AuthController {
       throw new BadRequestException('Invalid password');
     }
     const jwtToken = await this.jwtService.signAsync({ email: user.email });
+    delete user.password;
     return { user, jwtToken };
   }
 
