@@ -10,7 +10,5 @@ export class Upload extends CommonEntity {
   @Column()
   size: number;
   @Column()
-  key: string;
-  @Column()
   url: string;
 }
