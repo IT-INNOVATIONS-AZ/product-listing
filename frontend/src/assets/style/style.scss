@@ -1,0 +1,14 @@
+@import "responsive";
+
+.bg {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-color: red;
+  @include responsive(smartphone-portrait) {
+    background-color: blue;
+  }
+  @include responsive(smartphone-landscape) {
+    background-color: green;
+  }
+}

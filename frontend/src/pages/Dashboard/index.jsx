@@ -2,6 +2,7 @@ import React from "react";
 import PieChart from "./components/PieChart";
 import { Card, Col, Flex, Row } from "antd";
 import Table from "./components/Table";
+import WsConnect from "./components/WsConnect";
 
 const Dashboard = () => {
   return (
@@ -19,6 +20,7 @@ const Dashboard = () => {
         <Card title="Product Items">
           <Table />
         </Card>
+        <WsConnect />
       </Col>
     </Row>
   );
